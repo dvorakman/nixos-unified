@@ -11,6 +11,7 @@ in
     self.nixosModules.default
     self.nixosModules.gui
     ./configuration.nix
+    ./disko.nix
   ];
 
   # Enable home-manager for "runner" user

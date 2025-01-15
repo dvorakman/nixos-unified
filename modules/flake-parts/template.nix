@@ -167,12 +167,18 @@
             description = "Your system hostname as shown by `hostname -s`";
             placeholder = "example";
           }
+          {
+            name = "device";
+            description = "The target disk for NixOS installation";
+            placeholder = "/dev/nvme0n1";
+          }
         ] ++ om.templates.home.params;
         tests = {
           default = {
             systems = [ "x86_64-linux" "aarch64-linux" ];
             params = om.templates.home.tests.default.params // {
               hostname = "example";
+              device = "/dev/nvme0n1";
             };
             asserts = {
               source = { };
