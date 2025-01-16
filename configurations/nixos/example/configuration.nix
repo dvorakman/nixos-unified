@@ -5,11 +5,11 @@
   fileSystems."/" = { device = "/dev/disk/by-label/nixos"; fsType = "btrfs"; };
 
   nixpkgs.hostPlatform = "x86_64-linux";
-  networking.hostName = "example";
+  networking.hostName = "idios";
 
   # For home-manager to work.
   # https://github.com/nix-community/home-manager/issues/4026#issuecomment-1565487545
-  users.users."runner".isNormalUser = true;
+  users.users."cardinal".isNormalUser = true;
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog

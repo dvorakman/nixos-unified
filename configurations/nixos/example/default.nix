@@ -14,8 +14,8 @@ in
     ./disko.nix
   ];
 
-  # Enable home-manager for "runner" user
-  home-manager.users."runner" = {
-    imports = [ (self + /configurations/home/runner.nix) ];
+  # Enable home-manager for "cardinal" user
+  home-manager.users."cardinal" = {
+    imports = [ (self + /configurations/home/cardinal.nix) ];
   };
 }

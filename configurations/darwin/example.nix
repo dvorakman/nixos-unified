@@ -12,11 +12,11 @@ in
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";
-  networking.hostName = "example";
+  networking.hostName = "idios";
 
   # For home-manager to work.
   # https://github.com/nix-community/home-manager/issues/4026#issuecomment-1565487545
-  users.users."runner".home = "/Users/runner";
+  users.users."cardinal".home = "/Users/cardinal";
 
   home-manager = {
     # Automatically move old dotfiles out of the way
@@ -26,9 +26,9 @@ in
     # we try to use as unique a backup file extension as possible.
     backupFileExtension = "nixos-unified-template-backup";
 
-    # Enable home-manager for "runner" user
-    users."runner" = {
-      imports = [ (self + /configurations/home/runner.nix) ];
+    # Enable home-manager for "cardinal" user
+    users."cardinal" = {
+      imports = [ (self + /configurations/home/cardinal.nix) ];
     };
   };
 

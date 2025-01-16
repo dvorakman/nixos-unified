@@ -114,19 +114,19 @@
         params = [
           {
             name = "username";
-            description = "Your username as shown by `id -un`";
-            placeholder = "runner";
+            description = "Your username";
+            placeholder = "cardinal";
           }
           # Git
           {
             name = "git-name";
-            description = "Your full name for use in Git config";
-            placeholder = "John Doe";
+            description = "Your name for use in Git config";
+            placeholder = "Derek";
           }
           {
             name = "git-email";
             description = "Your email for use in Git config";
-            placeholder = "johndoe@example.com";
+            placeholder = "78566663+dvorakman@users.noreply.github.com";
           }
           # Neovim
           {
@@ -139,9 +139,9 @@
         tests = {
           default = {
             params = {
-              username = "john";
-              git-email = "john@ex.com";
-              git-name = "John Doe";
+              username = "dvorakman";
+              git-email = "78566663+dvorakman@users.noreply.github.com";
+              git-name = "Derek";
               neovim = true;
             };
             asserts = {
@@ -149,7 +149,7 @@
                 "modules/home/neovim/default.nix" = true;
                 ".github/workflows" = false;
               };
-              packages."homeConfigurations.john.activationPackage" = {
+              packages."homeConfigurations.dvorakman.activationPackage" = {
                 "home-path/bin/nvim" = true;
                 "home-path/bin/git" = true;
                 "home-files/.config/git/config" = true;
@@ -164,8 +164,8 @@
         params = [
           {
             name = "hostname";
-            description = "Your system hostname as shown by `hostname -s`";
-            placeholder = "example";
+            description = "Your system hostname`";
+            placeholder = "idios";
           }
           {
             name = "device";
@@ -177,13 +177,13 @@
           default = {
             systems = [ "x86_64-linux" "aarch64-linux" ];
             params = om.templates.home.tests.default.params // {
-              hostname = "example";
+              hostname = "idios";
               device = "/dev/nvme0n1";
             };
             asserts = {
               source = { };
-              packages."nixosConfigurations.example.config.system.build.toplevel" = {
-                "etc/profiles/per-user/john/bin/git" = true;
+              packages."nixosConfigurations.idios.config.system.build.toplevel" = {
+                "etc/profiles/per-user/dvorakman/bin/git" = true;
               };
             };
           };
@@ -196,19 +196,19 @@
           {
             name = "hostname";
             description = "Your system hostname as shown by `hostname -s`";
-            placeholder = "example";
+            placeholder = "idios";
           }
         ] ++ om.templates.home.params;
         tests = {
           default = {
             systems = [ "x86_64-darwin" "aarch64-darwin" ];
             params = om.templates.home.tests.default.params // {
-              hostname = "example";
+              hostname = "idios";
             };
             asserts = {
               source = { };
-              packages."darwinConfigurations.example.config.system.build.toplevel" = {
-                "etc/profiles/per-user/john/bin/git" = true;
+              packages."darwinConfigurations.idios.config.system.build.toplevel" = {
+                "etc/profiles/per-user/dvorakman/bin/git" = true;
               };
             };
           };

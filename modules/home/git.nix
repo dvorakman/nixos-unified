@@ -9,8 +9,8 @@
   programs = {
     git = {
       enable = true;
-      userName = "John Doe";
-      userEmail = "johndoe@example.com";
+      userName = "Derek";
+      userEmail = "78566663+dvorakman@users.noreply.github.com";
       ignores = [ "*~" "*.swp" ];
       aliases = {
         ci = "commit";
