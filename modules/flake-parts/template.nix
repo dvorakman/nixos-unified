@@ -164,7 +164,7 @@
         params = [
           {
             name = "hostname";
-            description = "Your system hostname`";
+            description = "Your system hostname";
             placeholder = "idios";
           }
           {
